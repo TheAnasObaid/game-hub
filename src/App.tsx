@@ -5,17 +5,16 @@ function App() {
   return (
     <Grid
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
-      gap="8px"
     >
-      <GridItem p="4" area={"nav"} rounded="8px">
+      <GridItem area={"nav"}>
         <Navbar />
       </GridItem>
       <Show above={"lg"}>
-        <GridItem p="4" area={"aside"} bg={"gold"} rounded="8px">
+        <GridItem area={"aside"} backgroundColor="coral">
           Aside
         </GridItem>
       </Show>
-      <GridItem p="4" area={"main"} bg={"dodgerblue"} rounded="8px">
+      <GridItem area={"main"} backgroundColor="dodgerBlue">
         Main
       </GridItem>
     </Grid>
