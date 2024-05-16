@@ -1,15 +1,24 @@
-import { ListItem, UnorderedList } from "@chakra-ui/react";
+import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 
 const GenreList = () => {
   const { data } = useGenres();
 
   return (
-    <UnorderedList>
+    <List>
       {data.map((genre) => (
-        <ListItem key={genre.id}>{genre.name}</ListItem>
+        <ListItem key={genre.id}>
+          <HStack marginY={2}>
+            <Image
+              src={genre.image_background}
+              boxSize="32px"
+              borderRadius={3}
+            />
+            <Text fontSize="lg">{genre.name}</Text>
+          </HStack>
+        </ListItem>
       ))}
-    </UnorderedList>
+    </List>
   );
 };
 
