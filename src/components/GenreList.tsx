@@ -23,8 +23,8 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
   return (
     <List>
       {data.map((genre) => (
-        <ListItem key={genre.id}>
-          <HStack marginY={2}>
+        <ListItem key={genre.id} paddingY={1}>
+          <HStack>
             <Image
               src={getOptimizedImages(genre.image_background)}
               boxSize="32px"
@@ -32,9 +32,12 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
               objectFit="cover"
             />
             <Button
-              variant="link"
+              whiteSpace="normal"
+              textAlign="left"
               fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               onClick={() => onSelectedGenre(genre)}
+              fontSize="md"
+              variant="link"
             >
               {genre.name}
             </Button>
