@@ -11,9 +11,10 @@ import getOptimizedImages from "../services/get-images";
 
 interface Props {
   onSelectedGenre: (genre: Genre | null) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectedGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (isLoading) return <Spinner />;
@@ -32,7 +33,7 @@ const GenreList = ({ onSelectedGenre }: Props) => {
             />
             <Button
               variant="link"
-              fontWeight="normal"
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               onClick={() => onSelectedGenre(genre)}
             >
               {genre.name}
