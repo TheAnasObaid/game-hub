@@ -1,4 +1,5 @@
-import { HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
+import { IconType } from "react-icons";
 import {
   FaAndroid,
   FaAppStore,
@@ -8,9 +9,7 @@ import {
   FaWindowClose,
   FaXbox,
 } from "react-icons/fa";
-import { Platform } from "../hooks/useGames";
-import { IconType } from "react-icons";
-import { SiNintendo } from "react-icons/si";
+import { Platform } from "../hooks/usePlatforms";
 
 interface Props {
   platforms: { platform: Platform }[];
